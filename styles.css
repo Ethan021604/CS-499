@@ -1057,3 +1057,73 @@ ul {
         align-items: flex-start;
     }
 }
+
+
+/* =========================================================
+   Published Code Review Video
+
+   I originally created this area as a large feature space for
+   my code review publication. Once I embedded the completed
+   YouTube video, I needed it to fill that same space instead
+   of appearing as a small default video player inside the card.
+   ========================================================= */
+
+
+/* I kept the video inside the existing portfolio card so the
+   published recording remains visually connected to the rest
+   of the Code Review section. */
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 18px;
+    background:
+        radial-gradient(circle, rgba(56, 189, 248, 0.10), transparent 45%),
+        #0b111c;
+}
+
+
+/* I set the embedded video to completely fill its container.
+   This removes YouTube's small default display size and turns
+   the actual video into the featured publication on the page. */
+
+.code-review-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 18px;
+    display: block;
+}
+
+
+/* Once the video was published, I allowed its card to use the
+   full width of the Code Review section so the recording is
+   large enough to view comfortably directly from my portfolio. */
+
+.review-layout {
+    grid-template-columns: 1fr;
+}
+
+
+/* I kept the supporting review summary cards available below
+   the published video so the section still explains what the
+   recording covers before or after it is viewed. */
+
+.review-details {
+    margin-top: 22px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* On smaller screens, the supporting information stacks below
+   the video so each item remains readable and easy to access. */
+
+@media (max-width: 1030px) {
+    .review-details {
+        grid-template-columns: 1fr;
+    }
+}

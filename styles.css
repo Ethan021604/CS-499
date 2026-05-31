@@ -1,0 +1,1059 @@
+/* =========================================================
+   Ethan McGlone | CS-499 Computer Science ePortfolio
+   Main Website Styles
+
+   I chose a dark layout with blue accents because I wanted
+   this portfolio to feel modern and connected to software
+   development, while still keeping the content easy to read.
+   ========================================================= */
+
+
+/* =========================================================
+   Color and Layout Variables
+
+   I placed my repeated colors and sizing choices here so I
+   can make changes later without searching through the
+   entire file. This also keeps the design consistent across
+   each section of my portfolio.
+   ========================================================= */
+
+:root {
+    --background: #080c14;
+    --background-soft: #0e1420;
+    --background-card: #111a29;
+    --background-card-hover: #162237;
+
+    --border: rgba(148, 163, 184, 0.17);
+    --border-bright: rgba(56, 189, 248, 0.32);
+
+    --text-main: #f1f5f9;
+    --text-soft: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --accent: #38bdf8;
+    --accent-bright: #67e8f9;
+    --accent-dark: #0284c7;
+    --accent-glow: rgba(56, 189, 248, 0.18);
+
+    --success: #2dd4bf;
+
+    --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+
+    --radius-large: 26px;
+    --radius-medium: 18px;
+    --radius-small: 12px;
+
+    --container: 1180px;
+}
+
+
+/* =========================================================
+   Basic Page Setup
+
+   I removed the default browser spacing so the page starts
+   from a clean layout. This makes the spacing choices on the
+   site intentional instead of relying on browser defaults.
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* I enabled smooth scrolling because the navigation links
+   move to sections on the same page. This makes that movement
+   feel cleaner when a reviewer is exploring my portfolio. */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* I used a dark background with very light color glows.
+   The glows add some personality without distracting from
+   the actual portfolio content. */
+
+body {
+    min-height: 100vh;
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 12% 15%, rgba(56, 189, 248, 0.10), transparent 30%),
+        radial-gradient(circle at 88% 8%, rgba(45, 212, 191, 0.07), transparent 26%),
+        var(--background);
+    line-height: 1.7;
+}
+
+
+/* My links are styled within their individual sections, so
+   I removed the automatic underline and blue browser color. */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Paragraph text is slightly softer than headings so the
+   headings and important project labels stand out first. */
+
+p {
+    color: var(--text-soft);
+}
+
+
+/* I removed standard bullet styling because the enhancement
+   lists use custom markers that better match the site design. */
+
+ul {
+    list-style: none;
+}
+
+
+/* I limited the width of my content so text does not stretch
+   too far across large screens. This keeps the portfolio
+   readable and organized. */
+
+.container {
+    width: min(var(--container), calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   Navigation Header
+
+   I kept the navigation at the top of the screen while the
+   user scrolls so the major portfolio sections are always
+   easy to reach.
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--border);
+    background: rgba(8, 12, 20, 0.84);
+    backdrop-filter: blur(18px);
+}
+
+
+/* I placed my name on the left and the section links on the
+   right because this follows a familiar portfolio layout and
+   makes the page simple to navigate. */
+
+.nav {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+
+/* This groups my initials with my name and capstone title so
+   the top of the website immediately identifies whose work
+   is being presented. */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+/* I used my initials as a simple personal mark rather than
+   adding an unnecessary logo image. */
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    color: var(--background);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, var(--accent-bright), var(--accent-dark));
+    box-shadow: 0 12px 28px rgba(56, 189, 248, 0.20);
+}
+
+
+/* My name is emphasized, while the course title stays smaller
+   underneath it to provide context without competing for attention. */
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-main);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.brand-text small {
+    color: var(--text-muted);
+    font-size: 0.76rem;
+    font-weight: 500;
+}
+
+
+/* These links connect the reviewer directly to each important
+   part of my ePortfolio instead of requiring them to search
+   through a long page. */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links > a:not(.nav-button) {
+    color: var(--text-soft);
+    font-size: 0.94rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links > a:not(.nav-button):hover {
+    color: var(--accent-bright);
+}
+
+
+/* I styled the GitHub link as a button because the repository
+   is one of the most important outside resources connected
+   to this portfolio. */
+
+.nav-button {
+    padding: 10px 19px;
+    border: 1px solid var(--border-bright);
+    border-radius: 999px;
+    color: var(--accent-bright);
+    font-size: 0.92rem;
+    font-weight: 600;
+    background: rgba(56, 189, 248, 0.07);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+    background: rgba(56, 189, 248, 0.16);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   Shared Section Styling
+
+   These styles are reused throughout the page so each
+   portfolio section looks connected and professional.
+   ========================================================= */
+
+
+/* The small uppercase label helps identify what each section
+   represents before the larger title is read. */
+
+.eyebrow {
+    margin-bottom: 16px;
+    color: var(--accent-bright);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+
+/* I gave each section generous spacing because I want the
+   content to feel organized rather than packed together. */
+
+.section {
+    padding: 100px 0;
+}
+
+
+/* Some sections use a slightly different background so the
+   page is visually separated without needing heavy borders
+   or distracting design elements. */
+
+.section-dark {
+    background: rgba(14, 20, 32, 0.76);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* Larger section headings make it easy to scan my portfolio
+   and quickly identify the area being reviewed. */
+
+.section-title {
+    color: var(--text-main);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 750;
+    letter-spacing: -0.055em;
+    line-height: 1.14;
+}
+
+
+/* This layout places the title beside a short explanation.
+   I used it to provide context without creating large walls
+   of text at the start of every section. */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 48px;
+    margin-bottom: 50px;
+}
+
+.section-heading-text {
+    max-width: 470px;
+    color: var(--text-muted);
+}
+
+
+/* The enhancement heading is centered because the three cards
+   underneath it are equally important parts of my capstone. */
+
+.section-heading.centered {
+    max-width: 700px;
+    margin: 0 auto 54px;
+    display: block;
+    text-align: center;
+}
+
+.section-heading.centered .section-heading-text {
+    margin: 18px auto 0;
+}
+
+
+/* =========================================================
+   Hero Section
+
+   This is the first section shown on the website. I used it
+   to introduce the portfolio, explain the main artifact, and
+   provide immediate access to my code review and repository.
+   ========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 105px 0 96px;
+}
+
+
+/* These background glows add visual interest near the opening
+   section, but they do not cover or interfere with my text. */
+
+.hero-glow {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 999px;
+    filter: blur(10px);
+}
+
+.hero-glow-one {
+    width: 430px;
+    height: 430px;
+    top: -230px;
+    right: 12%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.19), transparent 68%);
+}
+
+.hero-glow-two {
+    width: 440px;
+    height: 440px;
+    bottom: -270px;
+    left: -90px;
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.10), transparent 68%);
+}
+
+
+/* I divided the opening section into two parts: my portfolio
+   introduction on the left and a quick artifact summary on
+   the right. This lets a reviewer understand my project fast. */
+
+.hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.08fr 0.7fr;
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* The main heading is intentionally large because it introduces
+   the goal of my ePortfolio before the reviewer reaches the
+   individual artifact sections. */
+
+.hero-copy h1 {
+    max-width: 720px;
+    margin-bottom: 25px;
+    font-size: clamp(2.9rem, 5.8vw, 4.55rem);
+    font-weight: 800;
+    letter-spacing: -0.075em;
+    line-height: 1.06;
+}
+
+
+/* I kept the introduction text to a comfortable width so it
+   is easy to read and does not take over the entire opening page. */
+
+.hero-description {
+    max-width: 650px;
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* These buttons make the most important content immediately
+   available: my published code review and my GitHub repository. */
+
+.hero-actions {
+    margin-top: 38px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.button {
+    min-height: 52px;
+    padding: 0 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 0.96rem;
+    font-weight: 650;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* The primary button highlights the code review because it is
+   the first required publication being added to this portfolio. */
+
+.button-primary {
+    color: #05101a;
+    background: linear-gradient(135deg, var(--accent-bright), var(--accent));
+    box-shadow: 0 18px 38px rgba(56, 189, 248, 0.20);
+}
+
+.button-primary:hover {
+    box-shadow: 0 23px 48px rgba(56, 189, 248, 0.30);
+}
+
+
+/* The repository button is still visible, but slightly quieter
+   so it does not compete with the code review publication. */
+
+.button-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+    background: var(--background-soft);
+}
+
+.button-secondary:hover {
+    border-color: var(--border-bright);
+    color: var(--text-main);
+}
+
+
+/* This card gives a quick overview of the Weight Tracker artifact.
+   I added it near the top because the rest of the portfolio is
+   centered around improving this application. */
+
+.hero-card {
+    padding: 34px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    background:
+        linear-gradient(145deg, rgba(56, 189, 248, 0.07), transparent 43%),
+        var(--background-card);
+    box-shadow: var(--shadow);
+}
+
+.card-label {
+    margin-bottom: 8px;
+    color: var(--accent-bright);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.hero-card h2 {
+    margin-bottom: 13px;
+    color: var(--text-main);
+    font-size: 2rem;
+    letter-spacing: -0.05em;
+}
+
+.card-description {
+    margin-bottom: 30px;
+    color: var(--text-soft);
+    font-size: 0.94rem;
+}
+
+
+/* I separated the project details into rows so the original
+   course, capstone course, and technical focus can be located
+   quickly by an instructor or potential employer. */
+
+.project-details {
+    margin-bottom: 26px;
+    border-top: 1px solid var(--border);
+}
+
+.detail-row {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.detail-row strong {
+    color: var(--text-main);
+    font-weight: 600;
+    text-align: right;
+}
+
+
+/* Technology tags give a fast summary of the development tools
+   involved in the enhanced artifact without adding more paragraphs. */
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.tech-tags span {
+    padding: 7px 13px;
+    border-radius: 999px;
+    color: var(--accent-bright);
+    font-size: 0.76rem;
+    font-weight: 600;
+    background: rgba(56, 189, 248, 0.09);
+    border: 1px solid rgba(56, 189, 248, 0.16);
+}
+
+
+/* =========================================================
+   About the Project Section
+
+   I used this section to explain why I chose the Weight
+   Tracker application and how it connects to my growth
+   throughout the computer science program.
+   ========================================================= */
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: 78px;
+    align-items: start;
+}
+
+.section-text {
+    padding-top: 6px;
+}
+
+
+/* Adding space between paragraphs keeps the project explanation
+   readable instead of presenting it as one dense block of text. */
+
+.section-text p + p {
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   Code Review Section
+
+   The code review is the first required published artifact in
+   my ePortfolio, so I gave it a large dedicated section and
+   made space for the video link once it is uploaded.
+   ========================================================= */
+
+.review-layout {
+    display: grid;
+    grid-template-columns: 0.96fr 1.04fr;
+    gap: 28px;
+}
+
+
+/* This creates a clean frame where my embedded or linked code
+   review video will be placed once publication is complete. */
+
+.video-card {
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    background: var(--background-card);
+}
+
+
+/* While the final video link is not uploaded yet, this placeholder
+   keeps the site layout complete and clearly marks where the
+   published code review will appear. */
+
+.video-placeholder {
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border-radius: 18px;
+    border: 1px dashed rgba(56, 189, 248, 0.26);
+    background:
+        radial-gradient(circle, rgba(56, 189, 248, 0.11), transparent 45%),
+        #0b111c;
+}
+
+
+/* The play icon visually communicates that this area is intended
+   for video content before the actual video is attached. */
+
+.play-icon {
+    width: 72px;
+    height: 72px;
+    padding-left: 4px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--background);
+    font-size: 1.45rem;
+    background: linear-gradient(135deg, var(--accent-bright), var(--accent-dark));
+    box-shadow: 0 16px 44px rgba(56, 189, 248, 0.25);
+}
+
+.video-placeholder p {
+    color: var(--text-main);
+    font-size: 1.15rem;
+    font-weight: 650;
+}
+
+.video-status {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+
+/* Beside the video, I summarize the three major parts of my code
+   review so the purpose of the recording is clear before it is played. */
+
+.review-details {
+    display: grid;
+    gap: 18px;
+}
+
+.mini-card {
+    padding: 27px 28px;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    column-gap: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+    background: var(--background-card);
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+
+/* A small hover response makes the cards feel interactive while
+   keeping the design subtle and professional. */
+
+.mini-card:hover {
+    border-color: var(--border-bright);
+    background: var(--background-card-hover);
+}
+
+.mini-number {
+    grid-row: span 2;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+}
+
+.mini-card h3 {
+    margin-bottom: 8px;
+    color: var(--text-main);
+    font-size: 1.08rem;
+}
+
+.mini-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   Enhancement Cards
+
+   I divided the enhancement plan into the three required
+   computer science areas so each part of my capstone can be
+   viewed separately while still belonging to one application.
+   ========================================================= */
+
+.enhancement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* Each card uses the same format because all three enhancement
+   categories contribute equally to the completed artifact. */
+
+.enhancement-card {
+    padding: 30px 28px;
+    min-height: 420px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+    background: var(--background-card);
+    transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.enhancement-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-bright);
+}
+
+.card-top {
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+/* Numbering the cards makes the progression of my enhancement
+   work easy to follow across the three milestone areas. */
+
+.enhancement-number {
+    color: var(--accent);
+    font-size: 0.84rem;
+    font-weight: 750;
+    letter-spacing: 0.18em;
+}
+
+
+/* The status label quickly identifies which course category
+   the enhancement is demonstrating. */
+
+.status-badge {
+    padding: 6px 11px;
+    border-radius: 999px;
+    color: var(--accent-bright);
+    font-size: 0.71rem;
+    font-weight: 650;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.18);
+}
+
+.enhancement-card h3 {
+    margin-bottom: 15px;
+    color: var(--text-main);
+    font-size: 1.3rem;
+    line-height: 1.35;
+    letter-spacing: -0.03em;
+}
+
+.enhancement-card p {
+    margin-bottom: 25px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+
+/* I used short lists under each enhancement to name the actual
+   improvements being made rather than only describing them broadly. */
+
+.enhancement-card li {
+    position: relative;
+    margin-bottom: 11px;
+    padding-left: 22px;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+
+/* The small colored markers add separation to each improvement
+   without using the standard browser bullet appearance. */
+
+.enhancement-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+}
+
+
+/* =========================================================
+   Course Outcome Alignment Section
+
+   This section connects my project work to the larger skills
+   demonstrated through the capstone, including communication,
+   development, algorithms, and secure programming.
+   ========================================================= */
+
+
+/* I reduced the top padding slightly because this section follows
+   directly after the enhancement cards and supports the same ideas. */
+
+.outcomes-section {
+    padding-top: 20px;
+}
+
+.outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+
+/* Each outcome card has a highlighted top border so the skills
+   are clearly separated while staying consistent with the rest
+   of the portfolio style. */
+
+.outcome-card {
+    padding: 28px 23px;
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-small) var(--radius-small);
+    background: rgba(17, 26, 41, 0.56);
+}
+
+.outcome-card h3 {
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.outcome-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   Artifact and Narrative Section
+
+   This area is built to hold the original artifact, enhanced
+   artifact, narratives, and final professional self-assessment
+   as those materials are completed during the course.
+   ========================================================= */
+
+.artifact-list {
+    display: grid;
+    gap: 13px;
+}
+
+
+/* I used row-style cards here because these items will later
+   become links or downloads rather than long descriptive sections. */
+
+.artifact-row {
+    padding: 25px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+    background: var(--background-card);
+}
+
+
+/* The artifact type label separates code files, narratives, and
+   reflection materials so the portfolio is easy to review. */
+
+.artifact-type {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.artifact-row h3 {
+    color: var(--text-main);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+
+/* These status labels honestly show which portfolio items are
+   still being completed instead of presenting unfinished links. */
+
+.artifact-status {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 0.77rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    background: rgba(148, 163, 184, 0.04);
+}
+
+
+/* =========================================================
+   Footer
+
+   The footer provides a simple closing label for the portfolio
+   and keeps the GitHub repository available at the bottom of
+   the page after a reviewer finishes reading.
+   ========================================================= */
+
+.site-footer {
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+    background: #060a11;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.footer-name {
+    color: var(--text-main);
+    font-weight: 650;
+}
+
+.footer-subtitle {
+    color: var(--text-muted);
+    font-size: 0.86rem;
+}
+
+.footer-content a {
+    color: var(--accent-bright);
+    font-size: 0.9rem;
+    font-weight: 550;
+}
+
+
+/* =========================================================
+   Responsive Layout
+
+   I included responsive changes so the portfolio remains usable
+   if it is viewed on a smaller laptop, tablet, or phone instead
+   of only appearing correctly on my own screen.
+   ========================================================= */
+
+
+/* At medium screen sizes, sections that were displayed side by
+   side are stacked so the text and cards remain readable. */
+
+@media (max-width: 1030px) {
+    .hero-grid,
+    .section-grid,
+    .review-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        gap: 48px;
+    }
+
+    .hero-card {
+        max-width: 650px;
+    }
+
+    .enhancement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .enhancement-card {
+        min-height: auto;
+    }
+
+    .outcome-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* On smaller screens, I changed the navigation and artifact rows
+   to vertical layouts so information does not become crowded or
+   difficult to select. */
+
+@media (max-width: 760px) {
+    .container {
+        width: min(var(--container), calc(100% - 34px));
+    }
+
+    .site-header {
+        position: static;
+    }
+
+    .nav {
+        padding: 18px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 16px 22px;
+    }
+
+    .hero {
+        padding: 72px 0 68px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        display: block;
+        margin-bottom: 38px;
+    }
+
+    .section-heading-text {
+        margin-top: 18px;
+    }
+
+    .video-placeholder {
+        min-height: 300px;
+    }
+
+    .mini-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .mini-number {
+        grid-row: auto;
+    }
+
+    .outcome-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artifact-row,
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

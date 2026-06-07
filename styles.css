@@ -1158,3 +1158,142 @@ ul {
     text-transform: uppercase;
     line-height: 1.2;
 }
+
+/* =========================================================
+   Enhancement One Publication Section
+
+   I added this section so my first completed enhancement has
+   its own polished place in the ePortfolio instead of only
+   being listed as a file in the repository.
+   ========================================================= */
+
+
+/* I made the first enhancement card behave like a link while
+   keeping the same card design that was already working well. */
+
+.enhancement-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.enhancement-link:focus-visible {
+    outline: 3px solid var(--accent-bright);
+    outline-offset: 6px;
+}
+
+
+/* This grid separates the written summary from the download
+   area so a reviewer can understand the enhancement and then
+   access the files without digging through the repository. */
+
+.publication-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+
+/* These cards match the rest of the portfolio style so the
+   published enhancement feels like part of the same site
+   instead of a random extra section. */
+
+.publication-card {
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    background:
+        linear-gradient(145deg, rgba(56, 189, 248, 0.06), transparent 44%),
+        var(--background-card);
+    box-shadow: var(--shadow);
+}
+
+.publication-card h3 {
+    margin-bottom: 16px;
+    color: var(--text-main);
+    font-size: 1.55rem;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+}
+
+.publication-card p {
+    color: var(--text-soft);
+    font-size: 0.96rem;
+}
+
+.publication-card p + p {
+    margin-top: 18px;
+}
+
+.publication-card strong {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+
+/* I gave the summary card more room because this is where I
+   explain what I changed and why the enhancement matters. */
+
+.publication-card-large {
+    min-height: 100%;
+}
+
+
+/* The download buttons stack neatly so the artifact and narrative
+   are easy to find and clearly connected to Enhancement One. */
+
+.download-actions {
+    margin-top: 28px;
+    display: grid;
+    gap: 14px;
+}
+
+.download-actions .button {
+    width: 100%;
+}
+
+
+/* I added this feedback note to show that I reviewed my milestone
+   feedback and used it to guide the published version of the work. */
+
+.feedback-note {
+    margin-top: 24px;
+    padding: 28px 32px;
+    border: 1px solid var(--border-bright);
+    border-radius: var(--radius-large);
+    background:
+        radial-gradient(circle at 8% 10%, rgba(56, 189, 248, 0.12), transparent 32%),
+        rgba(17, 26, 41, 0.74);
+}
+
+.feedback-note p {
+    color: var(--text-soft);
+    max-width: 1000px;
+}
+
+
+/* These published links keep the artifact list useful by turning
+   completed portfolio items into direct downloads. */
+
+.artifact-link {
+    color: var(--accent-bright);
+    border-color: var(--border-bright);
+    background: rgba(56, 189, 248, 0.08);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.artifact-link:hover {
+    background: rgba(56, 189, 248, 0.16);
+    transform: translateY(-1px);
+}
+
+
+/* On smaller screens, the summary and download card stack so
+   the Enhancement One section stays readable on any device. */
+
+@media (max-width: 1030px) {
+    .publication-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1127,3 +1127,34 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================================
+   BioSync Artifact Branding
+
+   I added these small styles after naming the application
+   BioSync so the featured artifact card matches the identity
+   I am building inside the app itself.
+   ========================================================= */
+
+
+/* I used a smaller welcome label above the app name to mirror
+   the opening screen design from the Android application. */
+
+.welcome-label {
+    margin-bottom: 8px;
+    color: var(--accent-bright);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+
+/* I spaced out the BioSync name so it feels more like the
+   branded app title instead of plain paragraph text. */
+
+.biosync-title {
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}

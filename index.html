@@ -47,13 +47,13 @@
                 <div class="hero-copy">
                     <p class="eyebrow">Computer Science ePortfolio</p>
 
-                   <!-- I updated the hero section to introduce BioSync by name because
+                    <!-- I updated the hero section to introduce BioSync by name because
                          this capstone artifact has grown from a basic class project into
                          a more complete mobile application with its own identity. -->
                     <h1>
                         BioSync turns personal progress into a cleaner, smarter mobile experience.
                     </h1>
-                    
+
                     <p class="hero-description">
                         This portfolio documents the evolution of BioSync, my Android
                         weight tracking application. The project began as an earlier
@@ -75,7 +75,7 @@
                     <p class="card-label">Featured Artifact</p>
                     <p class="welcome-label">Welcome to</p>
                     <h2 class="biosync-title">B I O S Y N C</h2>
-                    
+
                     <p class="card-description">
                         Sync your goals, track your progress, and keep your body data
                         moving forward through a focused Android mobile experience.
@@ -116,6 +116,9 @@
                 </div>
 
                 <div class="section-text">
+                    <!-- This section explains what BioSync actually does while still
+                         connecting it back to the original artifact required for my
+                         CS-499 ePortfolio. -->
                     <p>
                         BioSync is an Android mobile application focused on weight tracking,
                         goal management, and progress visibility. The original version allowed
@@ -150,7 +153,7 @@
                 </div>
 
                 <div class="review-layout">
-                   <div class="video-card">
+                    <div class="video-card">
                         <!-- I embedded my completed code review directly into the portfolio
                              so a reviewer can view the first required publication without
                              leaving the site or searching for an outside file. -->
@@ -211,7 +214,9 @@
                 </div>
 
                 <div class="enhancement-grid">
-                    <article class="enhancement-card">
+                    <!-- I made the first enhancement card clickable because this is the
+                         first enhancement being published to my ePortfolio this week. -->
+                    <a class="enhancement-card enhancement-link" href="#enhancement-one">
                         <div class="card-top">
                             <span class="enhancement-number">01</span>
                             <span class="status-badge">Software Design</span>
@@ -230,7 +235,7 @@
                             <li>Improved code organization</li>
                             <li>Cleaner UI structure</li>
                         </ul>
-                    </article>
+                    </a>
 
                     <article class="enhancement-card">
                         <div class="card-top">
@@ -271,6 +276,100 @@
                             <li>Security-focused data management</li>
                         </ul>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhancement One Publication Section -->
+        <section class="section section-dark enhancement-publication" id="enhancement-one">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Published Enhancement One</p>
+                        <h2 class="section-title">Software Engineering and Design</h2>
+                    </div>
+
+                    <p class="section-heading-text">
+                        This publication presents the first major BioSync enhancement:
+                        rebuilding the original Kotlin artifact into a cleaner Java-based
+                        Android application.
+                    </p>
+                </div>
+
+                <div class="publication-grid">
+                    <article class="publication-card publication-card-large">
+                        <!-- I wrote this summary directly on the website so a reviewer can
+                             understand the enhancement before opening the full artifact or
+                             narrative documents. -->
+                        <p class="card-label">Enhancement Summary</p>
+
+                        <h3>From Weight Tracker to BioSync</h3>
+
+                        <p>
+                            For Enhancement One, I focused on software engineering and design.
+                            The original CS-360 Weight Tracker application was rebuilt from
+                            Kotlin into Java and reorganized into a cleaner Android project.
+                            This gave me the chance to improve the structure of the app while
+                            keeping the original functionality intact.
+                        </p>
+
+                        <p>
+                            The enhanced version separates repeated logic into helper classes,
+                            including <strong>InputHelper</strong>, <strong>GoalHelper</strong>,
+                            and <strong>SmsHelper</strong>. I also replaced the older
+                            <strong>Triple</strong>-based data handling with a clearer
+                            <strong>WeightEntry</strong> model so each entry uses named values
+                            for ID, date, and weight.
+                        </p>
+
+                        <p>
+                            The app still supports account creation, login, weight entry
+                            creation, editing, deletion, goal tracking, and SMS notification
+                            logic. The main improvement is that the code is easier to read,
+                            easier to maintain, and better prepared for the later algorithm
+                            and database enhancements.
+                        </p>
+                    </article>
+
+                    <aside class="publication-card">
+                        <!-- I added direct download links so the artifact and narrative are
+                             easy to access from the portfolio without making the reviewer
+                             search through the repository folders. -->
+                        <p class="card-label">Portfolio Downloads</p>
+
+                        <h3>Enhancement Files</h3>
+
+                        <p>
+                            These files represent the published Software Engineering and
+                            Design enhancement for my CS-499 ePortfolio.
+                        </p>
+
+                        <div class="download-actions">
+                            <a class="button button-primary" href="artifacts/enhancement-one/WeightTracker_Main.zip" download>
+                                Download Enhanced Artifact
+                            </a>
+
+                            <a class="button button-secondary" href="narratives/3-2Narrative.docx" download>
+                                Download Narrative
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="feedback-note">
+                    <!-- I included a short feedback note because this publication is meant
+                         to show that I reviewed the milestone feedback and used it to guide
+                         the final ePortfolio version of this enhancement. -->
+                    <p class="card-label">Instructor Feedback and Polish</p>
+
+                    <p>
+                        Instructor feedback for this milestone confirmed that the architectural
+                        direction was strong, especially the move toward object-oriented design,
+                        modular helper classes, and clearer code comments. For final publication,
+                        I am continuing to focus on cleaner separation of responsibilities,
+                        stronger rationale comments, consistent formatting, and clearer evidence
+                        of the specific classes used in the enhancement.
+                    </p>
                 </div>
             </div>
         </section>
@@ -353,17 +452,21 @@
                     <article class="artifact-row">
                         <div>
                             <span class="artifact-type">Enhanced Artifact</span>
-                            <h3>BioSync Application: Enhanced Capstone Version</h3>
+                            <h3>BioSync Application: Software Design Enhancement</h3>
                         </div>
-                        <span class="artifact-status">Coming Soon</span>
+                        <a class="artifact-status artifact-link" href="artifacts/enhancement-one/WeightTracker_Main.zip" download>
+                            Published
+                        </a>
                     </article>
 
                     <article class="artifact-row">
                         <div>
-                            <span class="artifact-type">Narratives</span>
-                            <h3>Enhancement Documentation and Reflection</h3>
+                            <span class="artifact-type">Narrative</span>
+                            <h3>Enhancement One Narrative and Reflection</h3>
                         </div>
-                        <span class="artifact-status">Coming Soon</span>
+                        <a class="artifact-status artifact-link" href="narratives/3-2Narrative.docx" download>
+                            Published
+                        </a>
                     </article>
 
                     <article class="artifact-row">

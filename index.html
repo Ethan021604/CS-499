@@ -237,25 +237,27 @@
                         </ul>
                     </a>
 
-                    <article class="enhancement-card">
+                    <!-- I made the second enhancement card clickable now that the algorithms
+                         and data structures enhancement is ready to publish in the ePortfolio. -->
+                    <a class="enhancement-card enhancement-link" href="#enhancement-two">
                         <div class="card-top">
                             <span class="enhancement-number">02</span>
                             <span class="status-badge">Algorithms</span>
                         </div>
-
+                    
                         <h3>Algorithms and Data Structures</h3>
-
+                    
                         <p>
-                            Expanding the application with meaningful calculations and
-                            improved data processing for recorded weight entries.
+                            Expanding BioSync with meaningful progress calculations, structured
+                            weight entry data, and a reusable class for analyzing saved records.
                         </p>
-
+                    
                         <ul>
-                            <li>Total weight gained or lost</li>
+                            <li>Progress summary calculations</li>
                             <li>Highest and lowest weight entries</li>
-                            <li>Progress toward goal weight</li>
+                            <li>Goal progress using O(n) logic</li>
                         </ul>
-                    </article>
+                    </a>
 
                     <article class="enhancement-card">
                         <div class="card-top">
@@ -378,6 +380,99 @@
             </div>
         </section>
 
+        <!-- Enhancement Two Publication Section -->
+        <section class="section section-dark enhancement-publication" id="enhancement-two">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Published Enhancement Two</p>
+                        <h2 class="section-title">Algorithms and Data Structures</h2>
+                    </div>
+        
+                    <p class="section-heading-text">
+                        This publication presents the second major BioSync enhancement:
+                        using algorithmic logic and structured data to turn stored weight
+                        entries into useful progress information.
+                    </p>
+                </div>
+        
+                <div class="publication-grid">
+                    <article class="publication-card publication-card-large">
+                        <!-- I wrote this summary directly on the website so a reviewer can
+                             understand how the second enhancement adds more meaningful
+                             data processing to BioSync. -->
+                        <p class="card-label">Enhancement Summary</p>
+        
+                        <h3>From Stored Entries to Progress Feedback</h3>
+        
+                        <p>
+                            For Enhancement Two, I focused on algorithms and data structures.
+                            Before this enhancement, BioSync could store and display weight
+                            entries, but it did not do much with that information after the
+                            user entered it.
+                        </p>
+        
+                        <p>
+                            I improved the app by adding a progress summary that calculates
+                            the user's starting weight, current weight, total change, highest
+                            recorded weight, lowest recorded weight, and goal progress. These
+                            calculations make the app more useful because the saved data is
+                            now being analyzed instead of only displayed.
+                        </p>
+        
+                        <p>
+                            The enhancement uses a list of <strong>WeightEntry</strong> objects
+                            to organize saved records. The calculation logic is separated into
+                            a reusable <strong>WeightStats</strong> class, which loops through
+                            the saved entries once to compare values and build the summary. This
+                            keeps the algorithm efficient with <strong>O(n)</strong> time
+                            complexity because each saved entry only needs to be checked one time.
+                        </p>
+                    </article>
+        
+                    <aside class="publication-card">
+                        <!-- I added direct download links so the artifact and narrative are
+                             easy to access from the portfolio without making the reviewer
+                             search through the repository folders. -->
+                        <p class="card-label">Portfolio Downloads</p>
+        
+                        <h3>Enhancement Files</h3>
+        
+                        <p>
+                            These files represent the published Algorithms and Data Structures
+                            enhancement for my CS-499 ePortfolio.
+                        </p>
+        
+                        <div class="download-actions">
+                            <a class="button button-primary" href="artifacts/enhancement-two/WeightTracker_E2.zip" download>
+                                Download Enhancement Two Artifact
+                            </a>
+        
+                            <a class="button button-secondary" href="narratives/Enhancement%20Two%20Narrative.docx" download>
+                                Download Enhancement Two Narrative
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+        
+                <div class="feedback-note">
+                    <!-- I included a short feedback note because this publication is meant
+                         to show that I reviewed the milestone feedback and used it to guide
+                         the final ePortfolio version of this enhancement. -->
+                    <p class="card-label">Instructor Feedback and Polish</p>
+        
+                    <p>
+                        Instructor feedback for this milestone confirmed that the enhancement
+                        successfully moved the app beyond basic CRUD functionality by adding
+                        meaningful calculations, data comparison, and progress tracking. For
+                        final publication, I polished the explanation of the data structure,
+                        clarified the one-pass O(n) loop, and checked the code for temporary
+                        debugging statements.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
         <!-- Outcome Alignment Section -->
         <section class="section outcomes-section">
             <div class="container">

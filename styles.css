@@ -1297,3 +1297,26 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================================
+   Professional Self-Assessment Section
+
+   I added this section near the top of the portfolio because
+   the self-assessment introduces my full body of work before
+   a reviewer moves into the individual artifacts.
+   ========================================================= */
+
+.self-assessment-card {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.self-assessment-card p {
+    color: var(--text-soft);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.self-assessment-card p + p {
+    margin-top: 22px;
+}

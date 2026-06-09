@@ -28,6 +28,7 @@
             </a>
 
             <div class="nav-links">
+                <a href="#self-assessment">Self-Assessment</a>
                 <a href="#about">About</a>
                 <a href="#code-review">Code Review</a>
                 <a href="#enhancements">Enhancements</a>
@@ -105,7 +106,212 @@
                 </aside>
             </div>
         </section>
+        <!-- Professional Self-Assessment Section -->
+        <section class="section section-dark self-assessment-section" id="self-assessment">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Professional Self-Assessment</p>
+                        <h2 class="section-title">Growth Across the Computer Science Program</h2>
+                    </div>
 
+                    <p class="section-heading-text">
+                        This section introduces my ePortfolio by connecting my coursework,
+                        capstone enhancements, career goals, and overall development as a
+                        computer science student.
+                    </p>
+                </div>
+
+                <article class="publication-card publication-card-large self-assessment-card">
+                    <!-- I placed my professional self-assessment near the beginning of
+                         the ePortfolio because it introduces the full body of work before
+                         a reviewer moves into the code review and individual enhancements. -->
+                    <p>
+                        Throughout the Computer Science program, one of the biggest things
+                        I learned about myself is that I enjoy creating things at my core.
+                        I am most interested in the side of computer science where code becomes
+                        something visual, interactive, and usable. I enjoy the process of
+                        building something that a user can interact with, whether that is a
+                        game mechanic, a mobile app screen, a visual scene, or a full application.
+                        This ePortfolio represents that growth by showing how my skills developed
+                        across the program and how I brought those skills together in my CS-499
+                        capstone project.
+                    </p>
+
+                    <p>
+                        My goal is to pursue game development or another interactive software
+                        role, but I also understand that a Computer Science degree gives me a
+                        broader foundation than only one career path. Across the program, I gained
+                        experience in software development, mobile applications, full-stack
+                        development, databases, security, testing, data structures, algorithms,
+                        and computer graphics. Those areas may seem separate at first, but they
+                        all connect back to building better software. A game still needs organized
+                        code, efficient logic, secure data handling, testing, user-centered design,
+                        and strong communication. Even though my capstone artifact is a mobile
+                        weight tracking app instead of a game, the skills behind it still connect
+                        heavily to the kind of work I want to do.
+                    </p>
+
+                    <p>
+                        One of the courses that helped me see how larger applications come together
+                        was CS-465, Full Stack Development. That course helped me understand how
+                        frontend development, backend services, APIs, authentication, and databases
+                        work together as one system. Before that, it was easier to think of each
+                        part of an application as separate. Full-stack development helped me see
+                        the bigger picture of how users interact with an application and how the
+                        application communicates with the server and database behind the scenes.
+                        That experience carried into my capstone because my Weight Tracking App
+                        also needed login handling, database storage, user input, and a clear flow
+                        between screens.
+                    </p>
+
+                    <p>
+                        CS-360, Mobile Architecture and Programming, became one of the most
+                        important courses for my final portfolio because it gave me the original
+                        artifact I enhanced for CS-499. The Weight Tracking App started as a mobile
+                        application that let users create an account, log in, save weight entries,
+                        set a goal weight, and manage their records. During the capstone, I used
+                        that original project as the foundation for all three enhancements. This
+                        allowed me to show growth across multiple areas without jumping between
+                        unrelated artifacts. Instead of building three separate projects, I improved
+                        one application in stages so the final portfolio shows a single project
+                        becoming stronger over time.
+                    </p>
+
+                    <p>
+                        My graphics and game-related courses also shaped the way I view software
+                        development. In CS-330, Computational Graphics and Visualization, I worked
+                        with visual scenes, transformations, textures, camera movement, and rendering
+                        concepts. Those skills connect directly to why I am interested in game
+                        development. They also helped reinforce that programming is not only about
+                        making something technically work. It is also about creating something that
+                        a user can see, understand, and interact with. My game development courses
+                        added to that interest by giving me more exposure to gameplay systems,
+                        Unreal Engine work, player interaction, animation setup, and visual design.
+                        Those experiences helped confirm that interactive software is the direction
+                        I want to continue pursuing.
+                    </p>
+
+                    <p>
+                        The first enhancement in my capstone focused on software design and
+                        engineering. I rebuilt the Weight Tracking App from Kotlin into Java and
+                        improved the overall organization of the project. This enhancement showed
+                        my growth in object-oriented design, code structure, and maintainability.
+                        Instead of keeping too much responsibility in one activity, I separated
+                        functionality into helper and model classes such as DatabaseHelper,
+                        WeightEntry, WeightAdapter, InputHelper, GoalHelper, and SmsHelper. This
+                        made the app easier to read and easier to build on later. This enhancement
+                        connects to professional software development because clean structure matters.
+                        A working application can still be difficult to maintain if the code is
+                        crowded or poorly organized.
+                    </p>
+
+                    <p>
+                        The second enhancement focused on algorithms and data structures. Before
+                        this enhancement, the app could store and display weight entries, but it
+                        did not do much with that information. I added a progress summary that
+                        calculates the user’s starting weight, current weight, total change, highest
+                        recorded weight, lowest recorded weight, and progress toward a goal. This
+                        required the app to process a list of WeightEntry objects and use comparison
+                        logic to produce useful results. The entries are loaded into a
+                        List&lt;WeightEntry&gt;, backed by an ArrayList, which works well for this
+                        project because the app needs to process the records in order. The algorithm
+                        runs in O(n) time because it checks each entry once. This enhancement showed
+                        my ability to use data structures and algorithmic thinking to make stored
+                        data more meaningful for the user.
+                    </p>
+
+                    <p>
+                        The third enhancement focused on databases. The original app had account
+                        creation and login, but the weight entries and goal weight were not fully
+                        connected to individual user accounts. For the database enhancement, I
+                        improved the SQLite database structure so each user has their own saved
+                        weight entries and goal weight. I added user-specific relationships through
+                        user_id fields and updated the app so it passes the active user ID from the
+                        login screen into the weight log screen. This made the CRUD functionality
+                        stronger because adding, reading, updating, and deleting records now happens
+                        in relation to the active account. I tested this by creating separate test
+                        accounts and confirming that each account kept its own dates, weights, and
+                        goals.
+                    </p>
+
+                    <p>
+                        Security was also part of my growth during the program, especially through
+                        courses like CS-305 and through the database enhancement in CS-499. One of
+                        the biggest things I learned is that security is not something that should
+                        be added only at the end of a project. Even small applications need to think
+                        about user data, validation, permissions, and access control. My capstone app
+                        is still an academic project, but separating user-specific data was an important
+                        step toward a stronger security mindset. It helped me understand that login
+                        functionality alone is not enough. The database also needs to support the idea
+                        that each user should only access their own information.
+                    </p>
+
+                    <p>
+                        Testing and debugging were also major parts of my development throughout the
+                        program. For example, CS-320 Software Test Automation helped reinforce the
+                        importance of testing software instead of assuming it works because it runs once.
+                        During the capstone, I had to test account creation, login, adding entries,
+                        updating entries, deleting entries, setting goals, SMS permission behavior,
+                        progress calculations, and user-specific database records. Debugging was not
+                        always smooth, especially when changes in one file affected another part of the
+                        application. One example was when I updated the weight log screen to use a user
+                        ID, but the helper methods still had older method signatures. Fixing that required
+                        checking how the files connected and making sure the database helper, goal helper,
+                        and activity code all matched. That kind of troubleshooting helped me become more
+                        comfortable working through problems instead of getting stuck when the app breaks.
+                    </p>
+
+                    <p>
+                        Communication and documentation were another important part of this course. The
+                        code review, enhancement narratives, journals, and ePortfolio all required me to
+                        explain my work clearly instead of only submitting code. This helped me practice
+                        communicating technical choices to an audience that may not be looking directly
+                        at the project in Android Studio. I had to explain what the artifact was, why I
+                        selected it, what I changed, what skills the changes demonstrated, and how the
+                        enhancements aligned with course outcomes. That matters professionally because
+                        software development is rarely just writing code alone. Developers also need to
+                        explain decisions, document reasoning, respond to feedback, and make their work
+                        understandable to instructors, reviewers, teammates, and other stakeholders.
+                    </p>
+
+                    <p>
+                        Collaboration was shown differently in this capstone because the project itself
+                        was individual, but I still had to work through feedback and communicate my progress.
+                        Instructor feedback helped guide what needed to be polished, such as explaining the
+                        data structure behind the algorithms enhancement and making sure the ePortfolio would
+                        be understandable to outside viewers. I also used the code review process to evaluate
+                        my own work more critically. That helped me move from simply saying “the app works”
+                        to explaining how the structure, logic, database design, and user experience had
+                        improved.
+                    </p>
+
+                    <p>
+                        Overall, this ePortfolio shows my growth from completing individual class assignments
+                        to building and explaining a more complete software project. The Weight Tracking App
+                        gave me one artifact where I could demonstrate software engineering, algorithms and
+                        data structures, databases, security thinking, testing, debugging, and communication.
+                        At the same time, the skills behind that artifact came from the entire Computer Science
+                        program, not only my capstone course. Full-stack development helped me understand
+                        connected systems. Mobile development helped me build user-facing applications. Graphics
+                        and game development strengthened my interest in visual and interactive software.
+                        Database, security, testing, and data structure courses helped me make the application
+                        more reliable, organized, and useful.
+                    </p>
+
+                    <p>
+                        As I move forward, I want to keep building toward a career in game development or
+                        interactive software. Creating things matters to me, and this portfolio shows that I
+                        am committed to continuing in this field. I know I still have more to learn, especially
+                        in larger production environments, game systems, graphics programming, and professional
+                        team workflows. However, this program has given me a stronger foundation and more
+                        confidence in my ability to build, troubleshoot, improve, and explain software. This
+                        ePortfolio is not just a collection of assignments. It is evidence of the kind of
+                        developer I am working to become.
+                    </p>
+                </article>
+            </div>
+        </section>
         <!-- About Section -->
         <section class="section" id="about">
             <div class="container section-grid">
